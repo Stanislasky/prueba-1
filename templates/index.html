@@ -2,53 +2,99 @@
 <html>
 
 <head>
- <meta http-equiv="refresh" content="2"></meta>
+ <meta http-equiv="refresh" content="0.5"></meta>
 <style>
 	#tabla{border-collapse:collapse;
 		}
 	#q1,#q2,#q3,#q4{	/*Varios id con mismas características*/
 		width:100px;
 		height:100px;
-		border:1px solid black;
+		border:10px blue;
 		text-align:center;
+		line-height: 100px;
+		position: absolute;
+		border-radius:10px;
 		}
-	#q1{background-color:	/*Cuadrante 1*/
+	#q1{
+		color:red;
+		font-weight:bold;
+		font-size:24px;
+		top:0;
+		left:0;
+		background-color:	/*Cuadrante 1*/
 		{% if ejeX > 0 and ejeY > 0 %}
 			lightblue;
 		{% else %}
-			gray;
+			black;
 		{% endif %}
 		}
-	#q2{background-color:	/*Cuadrante 2*/
+	#q2{
+		color:red;
+		font-weight:bold;
+		font-size:24px;
+		top:0;
+		right:0;
+		background-color:	/*Cuadrante 2*/
 		{% if ejeX > 0 and ejeY < 0 %}
 			lightblue;
 		{% else %}
-			gray;
+			black;
 		{% endif %}
 		}
-	#q3{background-color:	/*Cuadrante 3*/
+	#q3{
+		color:red;
+		font-weight:bold;
+		font-size:24px;
+		down:0;
+		left:0;
+		background-color:	/*Cuadrante 3*/
 		{% if ejeX < 0 and ejeY > 0 %}
 			lightblue;
 		{% else %}
-			gray;
+			black;
 		{% endif %}
 		}
-	#q4{background-color:	/*Cuadrante 4*/
+	#q4{
+		color:red;
+		font-weight:bold;
+		font-size:24px;
+		color:red;
+		down:0;
+		right:0;
+		background-color:	/*Cuadrante 4*/
 		{% if ejeX < 0 and ejeY < 0 %}
 			lightblue;
 		{% else %}
-			gray;
+			black;
 		{% endif %}
 		}
+	#qsy{
+		text-align:center;
+	}
+	#qsy2{
+		font-weight:bold;
+		widht:1px;
+		height:40px;
+		background-color:orange;
+		border-radius:50px;
+		text-align:center;
+		color:blue;
+		margin:50px;
+		font-size:24px;
+	}
+	#qsy3{
+		background-color:lightgray;
+	}
 </style>
 
 </head>
-<body>
+<body id = "qsy3">
 
-<h1>Posición XY</h1>
+<h1 id= "qsy" >Ubicación cartesiana</h1>
+<p id = "qsy" > Alejandro García Pérez </p>
 
-<p>X = {{ ejeX }}</p>
-<p>Y = {{ ejeY }}</p>
+<p id = "qsy2">X = {{ ejeX }}</p>
+<p id = "qsy2">Y = {{ ejeY }}</p>
 
 <table id="tabla">
 <tr id="cuadros">
@@ -58,6 +104,7 @@
 <tr>
     <td id="q3">Q3</td>
     <td id="q4">Q4</td>
+    
 </tr>
 </table>
 
